@@ -36,6 +36,9 @@ export default function RootLayout({
               <Link href="/" className="hover:underline">
                 Home
               </Link>
+              <Link href="/rights" className="hover:underline">
+                Rights
+              </Link>
             </div>
           </nav>
         </header>
