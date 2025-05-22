@@ -1,15 +1,21 @@
+"use client";
+
 import CommentCard from "@/components/ui/cards/CommentCard";
-import { topics } from "@/consts/dummy-topics";
+import { useFakeDbContext } from "@/context/FakeDbContext";
+import React from "react";
 
 interface TopicPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function TopicDetailPage({ params }: TopicPageProps) {
-  const topicId = parseInt(params.id);
-  const topic = topics.find((topic) => topic.id === topicId);
+  const actualParams = React.use(params);
+  const topicId = parseInt(actualParams.id);
+
+  const { fakeDbTopics } = useFakeDbContext();
+  const topic = fakeDbTopics.find((topic) => topic.id === topicId);
 
   if (!topic) {
     return <p>Topic not found.</p>;
