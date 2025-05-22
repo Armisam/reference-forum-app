@@ -1,9 +1,9 @@
-import CommentCard from "@/components/CommentCard";
+import CommentCard from "@/components/ui/cards/CommentCard";
 import { topics } from "@/consts/dummy-topics";
 
 interface TopicPageProps {
   params: {
-    id: string; // Important: from URL, it's a string
+    id: string;
   };
 }
 

@@ -2,7 +2,7 @@ import { PERMISSIONS, roles } from "@/consts/dummy-rights";
 
 export default function RightsPage() {
   return (
-    <section>
+    <>
       <h2 className="text-2xl font-bold mb-6">User Rights</h2>
       <div className="space-y-6">
         {roles.map((role) => (
@@ -30,6 +30,6 @@ export default function RightsPage() {
           </div>
         ))}
       </div>
-    </section>
+    </>
   );
 }

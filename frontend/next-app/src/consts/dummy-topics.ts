@@ -1,6 +1,6 @@
 import { Topic } from "@/types/topic";
 
-export const topics: Topic[] = [
+export const dummyTopics: Topic[] = [
     {
         id: 0,
         title: "General Discussion",

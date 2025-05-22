@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { Header } from "./layout/Header";
+import "../globals.css";
+import { Header } from "../layout/Header";
+import { FakeDbProvider } from "@/context/FakeDbContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ export default function RootLayout({
         <Header />
 
         <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
-          {children}
+          <FakeDbProvider>{children}</FakeDbProvider>
         </main>
 
         <footer className="border-t border-zinc-200 dark:border-zinc-700 mt-10 py-4 text-center text-sm text-zinc-600 dark:text-zinc-400">
